@@ -1,0 +1,42 @@
+{% extends 'ba.html.twig' %}
+
+{% block div %}
+
+    <table  width="60%"  align="center" class="table table-striped">
+
+        <tr>
+            <thead align="center">
+
+            <th> Matricule </th>
+            <th> Nom </th>
+            <th> Prenom </th>
+            <th> date Naissance </th>
+            <th> E_mail</th>
+            <th> Adresse</th>
+            <th> Type PNC</th>
+
+            <th> Action&nbsp;&nbsp;</th>
+            </thead>
+        </tr>
+        <tr>
+            {% for c in users %}
+
+            <td> {{ c.username|upper }}</td>
+            <td> {{ c.nom }}</td>
+            <td> {{ c.prenom}}</td>
+            <td> {{ c.dateNaiss|date('d/m/y')}}</td>
+            <td> {{ c.email}}</td>
+            <td> {{ c.adresse}}</td>
+            <td> {{c.type }}</td>
+
+            <td >
+
+                <a href="{{ path('edit_user', { 'id': c.id }) }}"> <i class="glyphicon glyphicon-edit"  title="Modifier"></i></a>
+                <a href="{{ path('supp_user',{'id':c.id}) }}}}"><i class="glyphicon glyphicon-remove" title="Supprimer" onclick="confirm('Are You Sure')"></i></a>
+
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock div %}

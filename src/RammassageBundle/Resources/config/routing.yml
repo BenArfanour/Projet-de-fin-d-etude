@@ -1,0 +1,19 @@
+rammassage_homepage:
+    path:     /
+    defaults: { _controller: RammassageBundle:Default:index }
+
+add_rammasage:
+    path:    /demande
+    defaults: {_controller: RammassageBundle:rammassage:new}
+
+delete_rammasage:
+    path:    /delete
+    defaults: {_controller: RammassageBundle:rammassage:delete}
+
+showww_rammassage:
+    path:    /showramassage
+    defaults: {_controller: RammassageBundle:rammassage:index}
+
+error:
+    path:   /error
+    defaults: {_controller: RammassageBundle:rammassage:error}
